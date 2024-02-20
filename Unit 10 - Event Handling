@@ -1,0 +1,107 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1xZUMQEjFfUS0QFGXm9dVP5xAjAuqJoy2/edit#slide=id.p1
+
+"""
+EXERCISE 1
+Add some new key bindings to the first sample program (copied below)
+Pressing keys R, G or B should change poly color to Red, Green or Blue.
+NOTE!!!  Each keyboard key has a name.  If you are not sure what your key is named, look it up.  Your keyboard also has a name, for example, you are using the English (American or USA) keyboard.
+Pressing keys + or - should increase or decrease the width of poly pen. Ensure that the pen size stays between 1 and 20 (inclusive).
+Handle some other keys to change some attributes of poly, or attributes of the window, or to give her new behaviour that can be controlled from the keyboard.
+"""
+
+# FOR THE FOLLOWING EXERCISES, USE THE TRAFFIC LIGHT PROJECT TO WORK # ON YOUR ASSIGNMENT.
+# REALIZE THAT THERE MAY NOT BE SOMETHING SPECIFIC TO TURN IN THESE 
+# EXERCISES ARE MEANT FOR YOU TO DO EXPLORATORY PROGRAMMING AND 
+# LATER DECIDE WHAT IS THE BEST PATH FOR YOUR PROGRAM TO RUN 
+# THE WAY YOU THINK IT SHOULD RUN.
+"""
+EXERCISE 2
+Change the traffic light program so that changes occur automatically, driven by a timer.
+Submit this exercise through the Traffic Light Project under
+Unit 10 in Repl.it
+
+EXERCISE 3
+In an earlier chapter we saw two turtle methods, hideturtle and
+showturtle that can hide or show a turtle. This suggests that we
+could take a different approach to the traffic lights program. Add
+to your program above as follows: draw a second housing for another
+set of traffic lights. Create three separate turtles to represent
+each of the green, yellow and red lights, and position them
+appropriately within your new housing. As your state changes occur,
+just make one of the three turtles visible at any time. Once you’ve
+made the changes, sit back and ponder some deep thoughts: you’ve now
+got two different ways to use turtles to simulate the traffic
+lights, and both seem to work. Is one approach somehow preferable to
+the other? Which one more closely resembles reality — i.e. the
+traffic lights in your town?
+
+EXERCISE 4
+Now that you’ve got a traffic light program with different turtles
+for each light, perhaps the visibility / invisibility trick wasn’t
+such a great idea. If we watch traffic lights, they turn on and off
+— but when they’re off they are still there, perhaps just a darker
+color. Modify the program now so that the lights don’t disappear:
+they are either on, or off. But when they’re off, they’re still
+visible.
+
+EXERCISE 5
+Your traffic light controller program has been patented, and you’re
+about to become seriously rich. But your new client needs a change.
+They want four states in their state machine: Green, then Green and
+Orange together, then Orange only, and then Red. Additionally, they
+want different times spent in each state. The machine should spend 3
+seconds in the Green state, followed by one second in the
+Green+Orange state, then one second in the Orange state, and then 2
+seconds in the Red state. Change the logic in the state machine.
+
+"""
+
+#EXERCISE 1
+import turtle
+
+wn = turtle.Screen()                 
+wn.bgcolor("lightgreen")            
+poly = turtle.Turtle()               
+
+def h1():
+   poly.forward(30)
+
+def h2():
+   poly.left(45)
+
+def h3():
+   poly.right(45)
+
+def h4():
+    wn.bye()
+# These lines "wire up" keypresses to the handlers we've defined.
+wn.onkey(h1, "Up")
+wn.onkey(h2, "Left")
+wn.onkey(h3, "Right")
+wn.onkey(h4, "q")
+
+# Now we need to tell the window to start listening for events,
+# If any of the keys that we're monitoring is pressed, its
+# handler will be called.
+wn.listen()
+wn.mainloop()
+
+"""
+EXERCISE 6
+If you don’t know how tennis scoring works, ask a friend or consult
+Wikipedia. A single game in tennis between player A and player
+always has a score. We want to think about the “state of the score”
+as a state machine. The game starts in state (0, 0), meaning neither
+player has any score yet. We’ll assume the first element in this
+pair is the score for player A. If player A wins the first point,
+the score becomes (15, 0). If B wins the first point, the state
+becomes (0, 15). Below are the first few states and transitions for
+a state diagram. In this diagram, each state has two possible
+outcomes (A wins the next point, or B does), and the uppermost arrow
+is always the transition that happens when A wins the point.
+Complete the diagram, showing all transitions and all states. (Hint:
+there are twenty states, if you include the duece state, the
+advantage states, and the “A wins” and “B wins” states in your
+diagram.) DIAGRAM PICTURE AVAILABLE TO YOU ON LAST LECTURE SLIDE.
+"""
