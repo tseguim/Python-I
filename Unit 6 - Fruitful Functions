@@ -1,0 +1,51 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1_tRfiqKmGZHf9cUKBqACv_dRDInPXvtu/edit
+
+""" 
+Today, you will start creating a calculator
+
+Remember how your code needs to look like!  
+- import statements, global variables, function definitions, and front end 
+
+Here are the requirements:
+- You need to write at least 3 mathematical functions
+- You need to write a front end for the user
+  - The user gets to pick which mathematical functions to perform
+  - The user will input the values to perform the actions
+  - The front end will then print the answer to the user
+
+"""
+
+#back end function
+def addNumbers(num1, num2):
+  return num1 + num2
+
+
+#front end function
+#most error handling will take place
+def getInputs():
+  
+  choice = int(input(" 1 for add\n 2 for subtract \n 3 for multiplication \n Choice:  "))
+  
+
+  x = float(input("number 1: "))
+  y = float(input("number 2: "))
+
+  if (choice == 1):
+    print("Addition is: " + str(addNumbers(x,y)))
+
+
+#test suite
+def test(passFail):
+  if(passFail):
+    print("True")
+  else:
+    print("False")
+
+def testsuite():
+  test(addNumbers(5, 3)==8)
+  test(addNumbers(5.0, 3.0)==8)
+  test(addNumbers(3,8)==8)
+
+testsuite()
+  
