@@ -1,0 +1,83 @@
+#import statements come first
+import turtle
+import math
+
+#global variables should come here
+
+#function definitions should be next
+def testFunction():
+  variable1 = 0
+  variable2 = 2
+  # the variables 1 and 2 above are only visible inside the function
+  # if you call the variables outside the function, you will get a 
+  # NameError:  name 'variable_name' is not defined in line ....
+  print(variable1)
+
+
+#there are two parameters to this function
+# t stands for turtle
+# sz stands for the side of the shape
+def draw_square(t, sz):
+  """Make turtle t draw a square of sz."""
+  for i in range(4):
+    t.forward(sz)
+    t.left(90)
+
+def draw_multicolor_square(t, sz):
+  """Make turtle t draw a multi-color square of sz."""
+  for i in ["red", "purple", "hotpink", "blue"]:
+    t.color(i)
+    t.forward(sz)
+    t.left(90)
+
+def final_amt(p, r, n, t):
+  """
+  Apply the compound interest formula to p
+  to produce the final amount.
+  """
+  a = p * (1 + r/n) ** (n*t)
+  return a         # This is new, and makes the function fruitful.
+
+
+
+#All procedural code will come here.
+#This is where you will test all your functions above!
+
+wn = turtle.Screen()        # Set up the window and its attributes
+wn.bgcolor("lightgreen")
+
+# Create poly
+poly = turtle.Turtle()     
+# Call the function to draw the square
+#draw_square(poly, 50)
+poly.color("red")
+#draw_square(poly, 100)
+poly.pensize(3)
+"""
+size = 20                   # Size of the smallest square
+for i in range(15):
+  #draw_multicolor_square(poly, size)
+  size = size + 10        # Increase the size for next time
+  poly.forward(10)        # Move tess along a little
+  poly.right(18)          #    and give her some turn
+"""
+#Test functions from the math package
+#https://docs.python.org/3/library/math.html
+print(abs(-5))
+print(pow(2,3))
+print(math.sqrt(41))
+#If you don't import the package, then you use
+#print(math.abs(-5))
+
+
+# now that we have the function above, let us call it.
+toInvest = float(input("How much do you want to invest?"))
+fnl = final_amt(toInvest, 0.08, 12, 5)
+print("At the end of the period you'll have: " + str(fnl))
+
+wn.mainloop()
+
+
+
+
+
