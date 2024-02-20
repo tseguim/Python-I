@@ -1,3 +1,166 @@
 # https://www.openbookproject.net/thinkcs/python/english3e/
 # https://docs.google.com/presentation/d/1_tRfiqKmGZHf9cUKBqACv_dRDInPXvtu/edit
 
+""" 
+Today, you will start creating a calculator
+
+Remember how your code needs to look like!  
+- import statements, global variables, function definitions, and front end 
+
+Here are the requirements:
+- You need to write at least 3 mathematical functions
+- You need to write a front end for the user
+  - The user gets to pick which mathematical functions to perform
+  - The user will input the values to perform the actions
+  - The front end will then print the answer to the user
+
+"""
+
+#back end function
+def addNumbers(num1, num2):
+  return num1 + num2
+
+def compare(num1, num2):
+  return 2
+
+def hypotenuse(num1, num2):
+  return 0
+
+def slope(x1, y1, x2, y2):
+  return 0
+
+def intercept(x1, y1, x2, y2):
+  return 0
+
+def is_factor(num1, num2):
+  return False
+
+def is_multiple(num1, num2):
+  return False
+
+def f2c(temp):
+  return 0
+
+def c2f(temp):
+  return 0
+
+#front end function
+#most error handling will take place
+def getInputs():
+  
+  choice = int(input(" 1 for add\n 2 for subtract \n 3 for multiplication \n Choice:  "))
+  
+  x = float(input("number 1: "))
+  y = float(input("number 2: "))
+
+  if (choice == 1):
+    print("Addition is: " + str(addNumbers(x,y)))
+
+
+#test suite
+def test(passFail):
+  if(passFail):
+    print("True")
+  else:
+    print("False")
+
+def testsuite():
+  test(addNumbers(5, 3)==8)
+  test(addNumbers(5.0, 3.0)==8)
+  test(addNumbers(3,8)==8)
+
+  """
+  Which of these tests fail? Explain why.
+  """
+  test(3 % 4 == 0)
+  test(3 % 4 == 3)
+  test(3 / 4 == 0)
+  test(3 // 4 == 0) 
+  test(3+4  *  2 == 14)
+  test(4-2+2 == 0)
+  test(len("hello, world!") == 13)
+
+  """
+  Write a compare function that returns 1 if a > b, 0 if a == b, and -1 if a < b
+  """
+  test(compare(5, 4) == 1)
+  test(compare(7, 7) == 0)
+  test(compare(2, 3) == -1)
+  test(compare(42, 1) == 1)
+
+  """
+  Write a function called hypotenuse that returns the length of the hypotenuse of a right triangle given the lengths of the two legs as parameters:
+  """
+  test(hypotenuse(3, 4) == 5.0)
+  test(hypotenuse(12, 5) == 13.0)
+  test(hypotenuse(24, 7) == 25.0)
+  test(hypotenuse(9, 12) == 15.0)
+
+  """
+  Write a function slope(x1, y1, x2, y2) that returns the slope of the line through the points (x1, y1) and (x2, y2). Be sure your implementation of slope can pass the following tests:
+  """
+  test(slope(5, 3, 4, 2) == 1.0)
+  test(slope(1, 2, 3, 2) == 0.0)
+  test(slope(1, 2, 3, 3) == 0.5)
+  test(slope(2, 4, 1, 2) == 2.0)
+
+  """Then use a call to slope in a new function named intercept(x1, y1, x2, y2) that returns the y-intercept of the line through the points (x1, y1) and (x2, y2)
+  """
+  test(intercept(1, 6, 3, 12) == 3.0)
+  test(intercept(6, 1, 1, 6) == 7.0)
+  test(intercept(4, 6, 12, 8) == 5.0)
+
+  """
+  Write a function is_factor(f, n) that passes these tests:
+  """
+  test(is_factor(3, 12))
+  test(not is_factor(5, 12))
+  test(is_factor(7, 14))
+  test(not is_factor(7, 15))
+  test(is_factor(1, 15))
+  test(is_factor(15, 15))
+  test(not is_factor(25, 15))
+
+  """
+  An important role of unit tests is that they can also act as unambiguous “specifications” of what is expected. These test cases answer the question Do we treat 1 and 15 as factors of 15?
+  """
+
+
+  """
+  Write is_multiple to satisfy these unit tests:
+  """
+  test(is_multiple(12, 3))
+  test(is_multiple(12, 4))
+  test(not is_multiple(12, 5))
+  test(is_multiple(12, 6))
+  test(not is_multiple(12, 7))
+  """
+  Can you find a way to use is_factor in your definition of is_multiple?
+  """
+
+  """
+  Write the function f2c(t) designed to return the integer value of the nearest degree Celsius for given temperature in Fahrenheit. (hint: you may want to make use of the built-in function, round. Try printing round.__doc__ in a Python shell or looking up help for the round function, and experimenting with it until you are comfortable with how it works.)
+  """
+  test(f2c(212) == 100)     # Boiling point of water
+  test(f2c(32) == 0)        # Freezing point of water
+  test(f2c(-40) == -40)     # Wow, what an interesting case!
+  test(f2c(36) == 2)
+  test(f2c(37) == 3)
+  test(f2c(38) == 3)
+  test(f2c(39) == 4)
+
+  """
+  Now do the opposite: write the function c2f which converts Celsius to Fahrenheit:
+  """
+  test(c2f(0) == 32)
+  test(c2f(100) == 212)
+  test(c2f(-40) == -40)
+  test(c2f(12) == 54)
+  test(c2f(18) == 64)
+  test(c2f(-48) == -54)
+
+
+testsuite()
+  
+
+
