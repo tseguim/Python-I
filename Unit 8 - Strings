@@ -1,0 +1,320 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1RydoJU8BYZN6-FSbifJrfwMbouPTHqFy/edit#slide=id.p1
+
+
+"""
+Add a conditional statement that if the letter is O or Q, it will concatenate the letter u to the string as well
+"""
+def addPrefix():
+  prefixes = "JKLMNOPQ"
+  suffix = "ack"
+
+  for letter in prefixes:
+    if letter == "O" or letter == "Q":
+      print(letter + "u" + suffix)
+    else:
+      print(letter + suffix)
+
+"""
+Encapsulate the following code in a function named count_letters, and generalize it so that it accepts the string and the letter as arguments.  
+Make the function return the number of characters, rather than print the answer.  
+The caller should do the printing.
+
+GENERALIZATION
+Generalizing a function means that it will function for ANY input/parameters.
+It means no hard-coding if possible...
+"""
+def countBanana():
+  fruit = "banana"
+  count = 0
+  for char in fruit:
+    if char == "a":
+      count += 1
+  return(count)
+
+"""
+Now rewrite the count_letters function so that instead of traversing the string, it repeatedly calls the find method, with the optional third parameter to located new occurrences of the letter being counted. 
+
+OVERLOADING METHODS
+Look at both methods below and see that they are overloaded.
+One is hard-coded and the other is generalized.
+"""
+#Example from lecture
+def count_a(text):
+	count = 0
+	for letter in text:
+		if letter == "a": #Hardcoding
+			count += 1
+	return count
+
+#Example from lecture
+def count_a(text, ch):
+	count = 0
+	for letter in text:
+		if letter == ch:
+			count += 1
+	return count
+
+def count_letters(text, ch):
+  #Your code will go here...
+	count = 0
+	for letter in text:
+		if letter == ch:
+			count += 1
+	return count
+
+def count_letters_using_find(text, ch):
+  count = 0
+  for i in range(len(text)):
+    index = find(text)
+  return count
+
+#index starting at 0 every single time
+def find(strng, ch):
+	index = 0
+	while index < len(strng):
+		if strng[index] == ch:
+			return index
+		index += 1
+	return -1
+
+#index as an input, starting whenever the user wishes
+def find(strng, ch, index):
+	while index < len(strng):
+		if strng[index] == ch:
+			return index
+		index += 1
+	return -1
+
+"""
+Assign to a variable in your program a triple-quoted string that contains your favourite paragraph of text - perhaps a poem, a speech, instructions to bake a cake, some inspirational verses, etc.
+Write a function which removes all punctuation from the string, breaks the string into a list of words, and counts the number of words in your text that contain the letter e. Your program should print an analysis of the text like this:
+
+- Your text contains 243 words, of which 109 (44.8%) contain an e
+"""
+def analyzeText(stringText):
+  #Your code will go here...
+  numWords =   len(stringText.split())
+  numEWords = 0
+  percentWords = 0.0
+
+  for word in stringText:
+    for letter in word:
+      #Hardcoded and will have to be changed
+      if letter == "e":
+        numEWords += 1
+        break
+
+  percentWords = (numEWords/numWords) * 100
+
+  message = "Your text contains " + str(numWords) + ", of which " + str(numEWords) + " (" + str(percentWords) + " %) contains the letter e."
+  print(message)
+
+"""
+Print a neat looking multiplication table
+"""
+def printMultiplicationTable(startNum, endNum):
+  #Your code will go here...
+  return 0
+
+""" 
+Write a function that reverses its string argument, and satisfies the tests on the test suite
+"""
+def reverse(stringText):
+  reversedText = ""
+  #Your code will go here...
+  index = -1
+  for i in range(len(stringText)):
+    reversedText = reversedText + stringText[index]
+    #print(reversedText)
+    index -= 1
+  return reversedText
+
+"""
+Write a function that mirrors its arguments
+"""
+def mirror(stringText):
+  mirroredText = ""
+  #Your code will go here...
+  return mirroredText
+
+"""
+Write a function that removes all occurrences of a given letter from a string
+"""
+def remove_letter(letter, stringText):
+  #the reason why there is a new text created is because
+  # strings are immutable and you cannot change a current
+  # string, but you can add or concatenate to a current string
+  # this is a blank string that will get things added to it.
+  newText = ""
+  #Your code will go here...
+
+  for char in stringText:
+    if char != letter:
+      newText = newText + char
+
+  return newText
+
+def remove_instance(letter, stringText):
+  newText = ""
+  #Your code will go here...
+  count = 0
+  for char in stringText:
+    
+    if char != letter:
+      newText = newText + char
+      print(newText)
+      count += 1
+
+  return newText
+"""
+Write a function that recognizes palindromes.  
+(Hint:  use your reverse function to make this easy!)
+"""
+def isPalindrome(stringText):
+  isIt = True
+  #Your code will go here...
+  return isIt
+
+def count(stringText, substring):
+  count = 0
+  startIndex = 0
+  isFound = True
+  
+  while isFound:
+    foundIndex = stringText.find(substring, startIndex) 
+    if foundIndex == -1: 
+      isFound = False
+    else:
+      count += 1        
+      startIndex = foundIndex + 1
+  
+  return count
+
+
+def learnString():
+  my_story = """
+  Pythons are constrictors, which means that they will 'squeeze' the life 
+  out of their prey.  They coil themselves around their prey and with each breath the creature takes the snake will squeeze a little tighter
+  until they stop breathing completely.  Once the heart stops the prey
+  is swallowed whole.  The entire animal is digested in the snake's 
+  stomach except for fur or feathers.  What do you think happens to the fur, 
+  feathers, beaks, and eggshells?  The 'extra stuff' gets passed out as ---
+  you guessed it --- snake POOP! """
+
+  print("Section 8.16")
+  s1 = "His name is {0} {1} {4} {2} {2} {3}!".format("Arthur", "one", "two", "three", "four")
+  print(s1)
+
+  name = "Alice"
+  age = 10
+  #In theory the variable below is:
+  # I am 'name' and I am 'age' years old
+  s2 = "I am {1} and I am {0} years old.".format(age,name)
+  print(s2)
+
+  n1 = 4
+  n2 = 5
+  s3 = "2**10 = {0} and {1} * {2} = {3:f}".format(2**10, n1, n2, n1*n2)
+  print (s3)
+
+  n1 = "Paris"
+  n2 = "Whitney"
+  n3 = "Hilton"
+
+  print("Pi to three decimal places is {0:.3f}".format(3.1415926))
+  print("123456789 123456789 123456789 123456789 123456789 123456789")
+  #left <, center ^, right >
+  print("|||{0:<15}|||{1:^15}|||{2:>15}|||Born in {3}|||".format(n1,n2,n3,1981))
+  print("The decimal value {0} converts to hex value {0:x}".format(123456))
+
+
+#TEST SUITE
+def test(passFail):
+  if (passFail):
+    return "Pass"
+  else:
+    return "Fail"
+
+def testsuite():
+  
+  learnString()
+  """
+  print("----------------------------------")
+  print("Count Bananas")
+  print("----------------------------------")
+  print(test(countBanana() == 3))
+  #print(test(count_a("banana") == 3))
+  print("----------------------------------")
+  print("Analyze Text")
+  print("----------------------------------")
+  """
+  analyzeText("""It's snowing this afternoon and there are no flowers.  There is only this sound of falling, quiet and remote, 
+  Like the memory of scales descending the white keys 
+  Of a childhood piano—outside the window, palms!
+  And the heavy head of the cereus, inclining,
+  Soon to let down its white or yellow-white.
+  Now, only these poor snow-flowers in a heap,
+  Like the memory of a white dress cast down . . .
+  So much has fallen.
+  And I, who have listened for a step
+  All afternoon, hear it now, but already falling away,
+  Already in memory. And the terrible scales descending
+  On the silent piano; the snow; and the absent flowers
+  abounding.""")
+  """
+  print("----------------------------------")
+  print("Reverse")
+  print("----------------------------------")
+  print(test(reverse("happy") == "yppah"))
+  print(test(reverse("Python") == "nohtyP"))
+  print(test(reverse("") == ""))
+  print(test(reverse("a") == "a"))
+  print("----------------------------------")
+  print("Mirror")
+  print("----------------------------------")
+  print(test(mirror("good") == "gooddoog"))
+  print(test(mirror("Python") == "PythonnohtyP"))
+  print(test(mirror("") == ""))
+  print(test(mirror("a") == "aa"))
+  """
+  print("----------------------------------")
+  print("Remove Letter")
+  print("----------------------------------")
+  print(test(remove_letter("a", "apple") == "pple"))
+  print(test(remove_letter("a", "banana") == "bnn"))
+  print(test(remove_letter("z", "banana") == "banana"))
+  print(test(remove_letter("b", "") == ""))
+  print(test(remove_letter("b", "c") == "c"))
+  print("----------------------------------")
+  """
+  print("Palindrome")
+  print("----------------------------------")
+  print(test(isPalindrome("abba")))
+  print(test(isPalindrome("abab")))
+  print(test(isPalindrome("tenet")))
+  print(test(isPalindrome("banana")))
+  print(test(isPalindrome("straw warts")))
+  print(test(isPalindrome("a")))
+  print(test(isPalindrome(""))) #Is an empty string a palindrome?
+  
+  print("----------------------------------")
+  print("Substring Occurrence Count")
+  print("----------------------------------")
+  print(test(count("ab", "Mississippi") == 0))
+  print(test(count("is", "Mississippi") == 2))
+  print(test(count("an", "banana") == 2))
+  print(test(count("ana", "banana") == 2))
+  print(test(count("nana", "banana") == 1))
+  print(test(count("aaa", "aaaaaaa") == 5))
+  
+  print("----------------------------------")
+  """
+  print("Remove First Occurent of a string from another string")
+  print("----------------------------------")
+  print(test(remove_instance("an", "banana") == "ba"))
+  print(test(remove_instance("cyc", "bicycle") == "bile"))
+  print(test(remove_instance("iss", "Mississippi") == "Mippi"))
+  print(test(remove_instance("eggs", "bicycle") == "bicycle"))
+
+testsuite()
