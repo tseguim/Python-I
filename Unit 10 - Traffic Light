@@ -1,0 +1,60 @@
+import turtle           
+# poly becomes a traffic light.
+
+wn = turtle.Screen()
+wn.bgcolor("lightgreen")
+rico = turtle.Turtle()
+
+def draw_housing():
+  rico.pensize(3)
+  rico.color("black", "darkgrey")
+  rico.begin_fill()
+  rico.forward(80)
+  rico.left(90)
+  rico.forward(200)
+  rico.circle(40, 180)
+  rico.forward(200)
+  rico.left(90)
+  rico.end_fill()
+
+draw_housing()
+
+rico.penup()
+# Position poly onto the place where the green light should be
+rico.forward(40)
+rico.left(90)
+rico.forward(50)
+# Turn poly into a big green circle
+rico.shape("circle")
+# poly.shapesize(3)
+rico.fillcolor("green")
+
+# A traffic light is a kind of state machine with three states,
+# Green, Orange, Red.  We number these states  0, 1, 2
+# When the machine changes state, we change poly' position and
+# her fillcolor.
+
+# This variable holds the current state of the machine
+state_num = 0
+
+def advance_state_machine():
+  global state_num
+  if state_num == 0:       # Transition from state 0 to state 1
+    rico.forward(70)
+    rico.fillcolor("orange")
+    state_num = 1
+  elif state_num == 1:     # Transition from state 1 to state 2
+    rico.forward(70)
+    rico.fillcolor("red")
+    state_num = 2
+  else:                    # Transition from state 2 to state 0
+    rico.back(140)
+    rico.fillcolor("green")
+    state_num = 0
+
+# Bind the event handler to the space key.
+wn.onkey(advance_state_machine, "space")
+
+wn.listen()                      # Listen for events
+wn.mainloop()
+
