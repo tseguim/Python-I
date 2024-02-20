@@ -1,0 +1,74 @@
+"""
+Unit 10 Notes from Lecture
+"""
+import turtle
+
+"""
+Screen instantiation
+Only one screen is to be instantiated for the exercises
+The Screen Object handles all the events the user asks for
+"""
+wn = turtle.Screen()                 
+wn.bgcolor("lightgreen")            
+
+"""
+Turtle instantiation
+More than one Turtle Object can be instantiated by using different
+variable names...
+"""
+poly = turtle.Turtle()               
+alex = turtle.Turtle()
+jake = turtle.Turtle()
+
+"""
+Turtle attributes for the Objects instantiated above
+"""
+alex.color("purple")
+alex.pensize(3)
+alex.shape("circle")
+
+jake.color("hot pink")
+jake.pensize(3)
+
+"""
+Function Definitions
+"""
+def h1():
+   poly.forward(30)
+
+def h2():
+   poly.left(45)
+
+def h3():
+   poly.right(45)
+
+def h4():
+    wn.bye()
+
+def c1(x, y):
+   alex.goto(x, y)
+
+def t1():
+    jake.forward(100)
+    jake.left(56)
+
+"""
+Event Handling Calls
+"""
+# These lines "wire up" keypresses to the handlers we've defined.
+wn.onkey(h1, "Up")
+wn.onkey(h2, "Left")
+wn.onkey(h3, "Right")
+wn.onkey(h4, "q")
+
+# Wire up a click on the window.
+wn.onclick(c1)
+
+# The events are handled by a timer
+wn.ontimer(t1, 2000)
+
+# Now we need to tell the window to start listening for events,
+# If any of the keys that we're monitoring is pressed, its
+# handler will be called.
+wn.listen()
+wn.mainloop()
