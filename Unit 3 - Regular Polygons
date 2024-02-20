@@ -1,0 +1,36 @@
+"""
+Your assigment will be to draw a regular polygon givent the user's input 
+for the amount of sides that the regular polygon needs to have
+"""
+
+# import the appropriate package or packages
+
+# Instantiate your turtle 
+# Here you can add any color, and pensize that you would like
+
+# Instantiate your window
+# Here you can pick the color for your window
+
+# ask the user to input the number of sides for the regular polygon
+
+numSides = # your number of sides input is stored in the numSides variable 
+
+# calculate the angle that your turtle will have to turn right or 
+# left to create the polygon
+# you will have to think about how to calculate these angles
+
+angle = # your calculation is stored in this variable here
+
+# create a for loop that will move the number of sides 
+
+for i in range(numSides):
+  # move the turtle forward whatever side size you pick
+  # move the turtle left or right with the angle you calculated above
+  # .right(angle) OR .left(angle)
+
+
+# Close your window mainloop!
+
+"""
+Good LUCK!
+"""
