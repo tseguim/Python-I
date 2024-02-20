@@ -1,2 +1,65 @@
 # https://www.openbookproject.net/thinkcs/python/english3e/
 # https://docs.google.com/presentation/d/1QHS5asn4fogWeNlbGpHE5VSgnH_p893L/edit#slide=id.p1
+
+
+#REFER TO THE UNIT 4 NOTES TO SEE THE PICTURES THAT ARE ATTACHED TO EACH EXERCISE
+
+
+#FUNCTION DEFINITIONS GO HERE
+"""
+EXERCISE 1
+Write a void (non-fruitful) function to draw a square. Use it in a program to draw the image shown below. Assume each side is 20 units. (Hint: notice that the turtle has already moved away from the ending point of the last square when the program ends.)
+"""
+
+"""
+EXERCISE 2
+Write a program to draw this. Assume the innermost square is 20 units per side, and each successive square is 20 units bigger, per side, than the one inside it.
+"""
+
+"""
+EXERCISE 3
+Write a void function draw_poly(t, n, sz) which makes a turtle draw a regular polygon. When called withdraw_poly(tess, 8, 50), it will draw a shape like this:
+"""
+
+"""
+EXERCISE 4 
+Refer to the the Unit 4 Notes for Pictures
+Draw this pretty pattern.
+"""
+
+"""
+EXERCISE 5
+The two spirals in this picture differ only by the turn angle. Draw both.
+"""
+
+
+"""
+EXERCISE 6
+Write a void function draw_equitriangle(t, sz) which calls draw_poly from the previous question to have its turtle draw a equilateral triangle.
+"""
+
+
+"""
+EXERCISE 7
+Write a fruitful function sum_to(n) that returns the sum of all integer numbers upto and including n. So sum_to(10)would be 1+2+3...+10 which would return the value 55.
+"""
+
+
+"""
+EXERCISE 8
+Write a function area_of_circle(r) which returns the area of a circle of radius r.
+"""
+
+
+"""
+EXERCISE 9
+Write a void function to draw a star, where the length of each side is 100 units. (Hint: You should turn the turtle by 144 degrees at each point.)
+"""
+
+"""
+EXERCISE 10
+Extend your program above. Draw five stars, but between each, pick up the pen, move forward by 350 units, turn right by 144, put the pen down, and draw the next star. You’ll get something like this:
+"""
+
+#ALL FUNCTION CALLS SHOULD GO HERE
+
