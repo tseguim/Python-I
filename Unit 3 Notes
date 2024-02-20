@@ -1,0 +1,133 @@
+# FIRST line of code must be all import statements that you are using
+import turtle
+import math
+
+# You are INSTANTITATING the Object Screen
+# Creating an INSTANCE of an Object
+window = turtle.Screen()
+
+# Set the background color of your window
+# Background color is an attribute of the Screen Object
+window.bgcolor("white")
+
+"""
+First Turtle Practice
+"""
+
+# You are INSTANTITATING the Object Turtle
+# Creating an INSTANCE of an Object
+poly = turtle.Turtle()
+
+# It will stamp the turtle on the screen so you can see where it is
+# at any time.  You can stamp the turtle anywhere.
+poly.stamp()
+print(poly.position())
+# Slow poly up
+#poly.speed(1)
+
+poly.color("darkgreen")
+poly.pensize(1)
+poly.shape("turtle")
+
+poly.penup()
+size = 20
+
+for i in range(20):
+  poly.stamp()
+  size = size + 3
+  poly.forward(size)
+  poly.right(24)
+
+poly.pendown()
+# Creating for loop to iterate through different values to create
+# more range with the turtles.
+for i in [0,1,2,3]:
+  poly.forward(50)
+  poly.left(90)
+
+poly.color("pink")
+for i in range(4):
+  poly.forward(50)
+  poly.left(90)
+
+#Find the correct angle for a pentagon
+poly.color("white")
+for i in range(5):
+  poly.forward(50)
+  poly.left(72)
+
+poly.color("red")
+for i in range(20):
+  poly.circle(20)
+  poly.forward(10)
+
+poly.pensize(5)
+for c in ["turquoise", "magenta", "green", "blue"]:
+	poly.color(c)
+	poly.forward(75)
+	poly.left(90)
+
+
+# Calling a behavior or function on the Turtle Object you instantiated
+# .forward function takes an int or float as a parameter
+poly.forward(50)
+print(poly.position())
+
+poly.left(90)
+# Change the size of the turtle
+#poly.pensize(10)
+poly.forward(30)
+
+# -----------------------------------
+# A herd of Turtles
+# -----------------------------------
+
+# INSTANTIATING a new Turtle Object named levi
+levi = turtle.Turtle()
+#Change the turtle color to lightgreen
+levi.color("lightgreen")
+#Change the size of the turtle to 5
+levi.pensize(5)
+
+#Slow levi down
+#levi.speed(1)
+
+# INSTANTIATING a new Turtle Object named abby
+abby= turtle.Turtle()
+#Change the turtle color to hotpink
+abby.color("hotpink")
+#Change the size of the turtle to 15
+abby.pensize(15)
+#Slow abby down
+#abby.speed(1)
+
+
+levi.forward(80)
+levi.left(120)
+levi.forward(80)
+levi.left(120)
+levi.forward(80)
+levi.left(120)
+
+levi.right(180)
+levi.forward(80)
+
+abby.forward(50)
+abby.left(90)
+abby.forward(50)
+abby.left(90)
+abby.forward(50)
+abby.left(90)
+abby.forward(50)
+abby.left(90)
+
+# f is a LOCAL variable for this loop only!
+# f has multiple values because it is ITERATING through a list of String
+for f in ["English", "Spanish", "Math", "Religion", "Computer Science"]:
+  # One is CONCATENATING String Values
+  schedule = "Hello " + f + " teacher!  I really enjoy your class"
+  print(schedule)
+print (f)
+
+# This is the last line of code ALWAYS
+window.mainloop()
