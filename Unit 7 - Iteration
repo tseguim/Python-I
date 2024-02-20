@@ -1,0 +1,314 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1hFSQxMs2HOew7QRqFkOQkV39PZLxTXVD/edit#slide=id.p1
+
+import turtle
+import random
+
+"""
+This chapter showed how to sum a list of items, and how to count items. The counting example also had an if statement that let us only count some selected items. In the previous chapter we also showed a function find_first_2_letter_word that allowed us an early exit from inside a loop by using return when some condition occurred. We now also have break to exit a loop (but not the enclosing function, and continue to abandon the current iteration of the loop without ending the loop.
+Composition of list traversal, summing, counting, testing conditions and early exit is a rich collection of building blocks that can be combined in powerful ways to create many functions that are all slightly different.
+The first six questions are typical functions you should be able to write using only these building blocks.
+Write a function to count how many odd numbers are in a list.
+"""
+
+#Sum up all the even numbers in a list.
+# Steps to take:
+#   1. initialize a sum variable
+#   2. iterate through list of numbers
+#   3. create a conditional
+#   4. if the number is even add the number to the initialized sum
+#   5. return the sum value to the user
+
+def sumEvens(listNumbers):
+  #create a variable to contain the sum of all evens
+  sumOfEvens = 0
+  #iterate through the list of numbers 
+  for i in listNumbers:
+    #create a conditional to make sure the number is even
+    if i%2 == 0:
+      #the you can go ahead and add the numbers together
+      sumOfEvens += i
+  return sumOfEvens
+
+#Sum up all the negative numbers in a list.
+def sumNegatives(listNumbers):
+  #create a variable to contain the sum of all negative numbers
+  sumOfNegatives = 0
+  #iterate through the list of numbers
+  for i in listNumbers:
+    #create a conditional to make sure the number is negative
+    if i<0:
+      sumOfNegatives += i
+  # return the sum to the function call
+  return sumOfNegatives
+
+#Count how many words in a list have length 5.
+def sumWordsWLength5(listWords):
+  #create a variable that counts the words
+  countWords = 0
+  #iterate through the list of words
+  for word in listWords:
+    #apply a behavior on the string non-primitive data type
+    # to check for the length of the word
+    # len(word) it returns an integer that can be comparable to a float as well.
+    if len(word) == 5:
+      countWords += 1
+  return countWords
+
+
+#Sum all the elements in a list up to but not including the first even number. (Write your unit tests. What if there is no even number?)
+def sumEvensExceptFirstEven(listNumbers):
+  #two different variables
+  #a variable for the sum of all evens except the first even
+  sumEvens = 0
+  #a variable that counts the number of evens
+  countEvens = 0
+
+  #iterate through the list of numbers
+  for i in listNumbers:
+    #create a conditional that checks that the number is even
+    if i%2 == 0:
+      countEvens += 1
+    if countEvens > 1 and i%2 == 0:
+      sumEvens += i
+
+  return sumEvens
+
+#Count how many words occur in a list up to and including the first occurrence of the word “sam”. (Write your unit tests for this case too. What if “sam” does not occur?)
+def countWordsPlusFirstSam(listWords):
+  # create two variables
+  # a variable that counts the number of words
+  countWords = 0
+  # a variable that counts the number of sams
+  countSam = 0
+
+  # iterate through the list of words
+  for word in listWords:
+    # create a conditional that checks to see if the word is sam
+    if word == "sam":
+      countSam += 1
+    if countSam == 1 and word == "sam":
+      countWords += 1
+    elif countSam < 1 and word != "sam":
+      countWords += 1
+    
+  return countWords
+
+
+#Add a print function to Newton’s sqrt function that prints out better each time it is calculated. Call your modified function with 25 as an argument and record the results.
+def newtownSqrt():
+  return 0
+
+#Trace the execution of the last version of print_mult_table and figure out how it works.
+def print_mult_table():
+  return 0
+
+"""
+Write a function print_triangular_numbers(n) that prints out the first n triangular numbers. A call to print_triangular_numbers(5) would produce the following output:
+1       1
+2       3
+3       6
+4       10
+5       15
+(hint: use a web search to find out what a triangular number is.)
+"""
+def print_triangular_numbers(n):
+  return 0
+
+"""
+Write a function, is_prime, which takes a single integer argument and returns True when the argument is a prime number and False otherwise. Add tests for cases like this:
+test(is_prime(11))
+test(not is_prime(35))
+test(is_prime(19911121))
+"""
+def is_prime(n):
+  #in this case, one is not iterating through a list
+  # so it is ok to return and break out of the function before all
+  # the conditioning takes place
+  if n <= 0:
+    return False
+  elif n == 1:
+    return False
+  elif n == 2:
+    return True
+
+  # let's figure out the rest of the numbers
+  # create a boolean variable that will be set to True if a number is prime
+  isPrime = True
+  for i in range(2, n):
+    if n % i == 0:
+      isPrime = False
+      break
+  
+  return isPrime
+
+"""
+What will num_digits(0) return? Modify it to return 1 for this case. Why does a call to num_digits(-24) result in an infinite loop? (hint: -1//10 evaluates to -1) Modify num_digits so that it works correctly with any integer value. Add these tests:
+test(num_digits(0) == 1)
+test(num_digits(-12345) == 5)
+"""
+def num_digits(n):
+  #create a variable that counts the number of digits in a number
+  countDigits = 0
+  #make sure that number is positive
+  if n < 0:
+    n = n * -1
+    #n *= -1
+
+  #make sure that number is not 0
+  while n != 0:
+    countDigits += 1
+    n = n//10
+  return countDigits
+
+"""
+Write a function num_even_digits(n) that counts the number of even digits in n. These tests should pass:
+test(num_even_digits(123456) == 3)
+test(num_even_digits(2468) == 4)
+test(num_even_digits(1357) == 0)
+test(num_even_digits(0) == 1)
+"""
+def num_even_digits(n):
+  #create a variable that counts the number of digits in a number
+  countEvenDigits = 0
+  #make sure that number is positive
+  if n < 0:
+    n = n * -1
+    #n *= -1
+
+  #make sure that number is not 0
+  while n != 0:
+    if n%2 == 0:
+      countEvenDigits += 1
+    n = n//10
+  return countEvenDigits
+
+"""
+Write a function sum_of_squares(xs) that computes the sum of the squares of the numbers in the list xs. For example, sum_of_squares([2, 3, 4]) should return 4+9+16 which is 29:
+test(sum_of_squares([2, 3, 4]) == 29)
+test(sum_of_squares([ ]) == 0)
+test(sum_of_squares([2, -3, 4]) == 29)
+"""
+def sum_of_squares(listNumbers):
+  #create a sum variable that holds all the value for the sum
+  sumSquares = 0
+  # iterate through the list of numbers
+  for i in listNumbers:
+    sumSquares += i**2
+    #sumSquares = sumSquares + i**2
+  return sumSquares
+
+"""
+You and your partner are in a team to write a two-player game, human against computer, such as Rock, Paper, Scissors. Your friend will write the logic to play one round of the game, while you will write the logic to allow many rounds of play, keep score, decide who plays, first, etc. The two of you negotiate on how the two parts of the program will fit together, and you come up with this simple scaffolding (which your friend will improve later):
+Write the main program which repeatedly calls this function to play the game, and after each round it announces the outcome as I win!, You win!, or Game drawn!. It then asks the player Do you want to play again? and either plays again, or says Goodbye, and terminates.
+Keep score of how many wins each player has had, and how many draws there have been. After each round of play, also announce the scores.
+Add logic so that the players take turns to play first.
+Compute the percentage of wins for the human, out of all games played. Also announce this at the end of each round.
+"""
+
+#1. Get the user input of either rock, paper, scissors
+def getUserChoice():
+  # the input function returns a string - a non-primitive data type
+  userInput = input("Enter rock, paper, or scissors: ")
+  if userInput != "rock" and userInput != "paper" and userInput != "scissors":
+    print("hey you did not pick a correct choice... ")
+    userInput = getUserChoice()
+
+  return userInput
+
+def getComputerChoice():
+  computerChoice = random.randint(1,3)
+  if computerChoice == 1:
+    return "rock"
+  elif computerChoice == 2:
+    return "paper"
+  elif computerChoice == 3:
+    return "scissors"
+  else:
+    print("Hey.... something really bad happened.")
+    return "invalid"
+
+def playGame():
+  userChoice = getUserChoice()
+  computerChoice = getComputerChoice()
+  
+  print("your choice is: " + userChoice + " and the computer is: " + computerChoice)
+
+  #create variables that hold messages to the users
+  tieGame = "Tie Game!"
+  winGame = "User Wins!"
+  loseGame = "User Loses!"
+  #RPS is an easy conditional game
+  if userChoice == "rock" and computerChoice == "rock":
+    print(tieGame)
+  elif userChoice == "rock" and computerChoice == "paper":
+    print(loseGame)
+  elif userChoice == "rock" and computerChoice == "scissors":
+    print(winGame)
+  elif userChoice == "paper" and computerChoice == "paper":
+    print(tieGame)
+  elif userChoice == "paper" and computerChoice == "scissors":
+    print(loseGame)
+  elif userChoice == "paper" and computerChoice == "rock":
+    print(winGame)
+  elif userChoice == "scissors" and computerChoice == "scissors":
+    print(tieGame)
+  elif userChoice == "scissors" and computerChoice == "rock":
+    print(loseGame)
+  elif userChoice == "scissors" and computerChoice == "paper":
+    print(winGame)
+  
+    
+  playAgain()
+
+def playAgain():
+
+  userInput = input("Do you want play again?  Type y for yes: ")
+  if userInput == "y":
+    playGame()
+  else:
+    print("Have a great one!")
+
+#TESTING AREA
+def test(passFail):
+  if passFail:
+    return True
+  else:
+    return False
+
+def testsuite():
+
+  print("\nSum Evens")
+  print(test(sumEvens([1,2,3,4,5,6])==12))
+  print("\nSum Evens Except First Even")
+  print(test(sumEvensExceptFirstEven([1,2,3,4,5,6])==10))
+
+  print("\nCount Of Words Including 1st Sam")
+  print(test(countWordsPlusFirstSam(["ace", "ice", "sea", "sam", "sun","sam"])==4))
+  print(test(countWordsPlusFirstSam(["sam", "sam", "ice", "sea", "sun", "sam"])==1))
+  print(test(countWordsPlusFirstSam(["max", "red", "ice", "sea", "sun", "yes"])==6))
+  print(test(countWordsPlusFirstSam([])==0))
+
+
+  print("\nIs Prime")
+  print("2: ", test(is_prime(2)))
+  print("21: ", test(is_prime(21)))
+  print("11: ", test(is_prime(11)))
+  print("-2: ", test(is_prime(-2)))
+
+  print("\nSum Squares")
+  print(test(sum_of_squares([2,3,4])==29))
+
+  print("\nCount Digits")
+  print(test(num_digits(1234567890)==10))
+  print(test(num_digits(-1234567890)==10))
+
+  print("\nCount Even Digits")
+  print(test(num_even_digits(1234567890)==5))
+  print(test(num_even_digits(-1234567890)==5))
+
+  print("\nRock, Paper, Scissors")
+  #Rock Paper Scissors Game call
+  playGame()
+
+testsuite()
