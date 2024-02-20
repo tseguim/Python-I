@@ -66,3 +66,81 @@ Exercise 8
 Write a program to solve the general version of the above problem.  Ask the user for the time now (in hours), and ask for the number of hours to wait.  Your program should output what the time will be on the clock when the alarm goes off.
 """
 #Your code goes here
+
+"""
+Exercise 8
+Write an algorithm that calculates the distance between two points.
+
+distance formula ->
+
+What is the info we need?
+x1
+x2
+y1
+y2
+
+distance of x = sqrt of the diff of x2 and x1 squared
+diffX = (x2 - x1) ** 0.5
+distance of y = sqrt of the diff of y2 and y1 squared
+diffY = (y2 - y1) ** 0.5
+
+distance = the square root of the the addition of diffX and diffY
+
+distance = 
+
+"""
+#Your code goes here
+x1 = int(input("Enter x1: "))
+x2 = int(input("Enter x2: "))
+y1 = int(input("Enter y1: "))
+y2 = int(input("Enter y2: "))
+diffX = (x2 - x1) ** 0.5
+diffY = (y2 - y1) ** 0.5
+distance = (diffX + diffY) ** 0.5
+print("The distance is: " + str(distance))
+"""
+Exercise 9
+Write an algorithm that reads (inputs) three integerss and prints the sum, product, difference, and average
+"""
+#Your code goes here
+x1 = float(input("Enter x1: "))
+x2 = float(input("Enter x2: "))
+x3 = float(input("Enter x3: "))
+
+print("Sum: ")
+print(x1 + x2 + x3)
+print("Product: ")
+print(x1 * x2 * x3)
+print("Difference: ")
+print(x1 - x2 - x3)
+print("Average: ")
+print((x1 + x2 + x3)/3)
+
+"""
+Exercise 10
+Write an algorithm that reads (inputs) three floats and prints the sum, product, difference, and average
+"""
+#Your code goes here
+
+"""
+Exercise 11
+Write an algorithm that converts temperature from Celsius
+to Fahrenheit
+"""
+#Your code goes here
+
+
+"""
+Exercise 12
+Write an algorithm that converts temperature from Fahrenheit to Celsius
+"""
+#Your code goes here
+
+"""
+Exercise 13
+Write an algorithm that calculates the volume of a 
+sphere, having the user input the radius
+Volume = 4/3 pi r^3
+"""
+#Your code goes here
+
