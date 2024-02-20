@@ -1,0 +1,97 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1UYuHyaWaUPYHZ7FbANoFjgr34gREeGLb/edit#slide=id.p1
+
+# Access every 3rd element in a list
+
+a = [1,2,3,4,5,6,7,8,9,10]
+i = 0
+while i < len(a):
+  print(a[i])
+  i = i + 3
+
+#build a list from information
+colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+
+rainbowColors = []
+for i in range(len(colors)):
+  rainbowColors.append(colors[i])
+  #rainbowColors[i] = colors[i]
+print(rainbowColors)  
+
+
+#Alias Testing
+a = [1,2,3]
+b = [3,4,5]
+
+print("a: ", a)
+print("b: ", b)
+print("Part 1 Testing")
+if a == b:
+  print("a == b:", a==b)
+if a is b:
+  print("a is b:", a is b)
+
+print("\nPart 2 Testing")
+#Set a equal to b and test the variable
+a = b
+print("a: ", a)
+print("b: ", b)
+
+if a == b:
+  print("a == b:", a==b)
+if a is b:
+  print("a is b:", a is b)
+
+
+print("\nPart 3 Testing")
+#Set b equal to a and test the variable
+b = a
+print("a: ", a)
+print("b: ", b)
+
+if a == b:
+  print("a == b:", a==b)
+if a is b:
+  print("a is b:", a is b)
+
+#Sending a list as a parameter for the function
+def double_stuff(a_list):
+  #Overwrite each element in a_list with double its value.
+  #for (idx, val) in enumerate(a_list):
+    #a_list[idx] = 2 * val
+  for i in range(len(a_list)):
+    a_list[i] = a_list[i] * 2
+    
+  #return a_list
+  #print(a_list)
+
+
+#dot_product which it will perform the following steps
+
+# Grab the value in vector1[0] multiply by the value in 
+# vector2[0] and then add them together.
+def dot_product(vector1, vector2):
+  sum = 0
+  #Assuming that vector1 and vector 2 are equal length
+  for i in range(len(vector1)):
+    sum = sum + (vector1[i] * vector2[i])
+  return sum
+
+def leapYear(y1, y2):
+  y1 -= 1
+  y2 -= 1
+  print("y2//4 - y1//4: ", y2//4 - y1//4)
+  print("y2//100 - y1//100: ", y2//100 - y1//100)
+  print("y2//400 - y1//400: ", y2//400 - y1//400)
+  return (y2//4 - y1//4) - (y2//100 - y1//100) + (y2//400 - y1//400)
+
+def test():
+  a_list = [1,2,3,4,5,6,7,8,9,10]
+  print(a_list)
+  print(double_stuff(a_list))
+  print(a_list)
+  print("\nDot Product Results")
+  print(dot_product([1,2,3], [1,2,3]))
+  leapYear(1977, 2023)
+
+test()
