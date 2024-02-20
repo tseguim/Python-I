@@ -1,0 +1,126 @@
+# https://www.openbookproject.net/thinkcs/python/english3e/
+# https://docs.google.com/presentation/d/1b83G4NRBBLf67fijqf4sYIzcOpRKuJJn/edit#slide=id.p1
+
+# --------------------------------------------------------
+# Exercise 1
+# Write a program that prints We like Python's turtles! 1000 times.
+# --------------------------------------------------------
+
+
+
+
+# --------------------------------------------------------
+# Exercise 2
+# Give three attributes of your cellphone object. Give three methods
+# of your cellphone.
+# --------------------------------------------------------
+
+
+
+# --------------------------------------------------------
+# Exercise 3
+# Write a program that uses a for loop to print
+#      One of the months of the year is January
+#      One of the months of the year is February
+#      …
+# --------------------------------------------------------
+
+
+
+# --------------------------------------------------------
+# Exercise 4
+# Suppose our turtle poly is at heading 0 — facing east. 
+# We execute the statement poly.left(3645). 
+# What does poly do, and what is her final heading?
+# --------------------------------------------------------
+
+
+
+# --------------------------------------------------------
+# Exercise 5
+# Assume you have the assignment xs = [12, 10, 32, 3, 66, 17, 42, 99, 20] 
+# Write a loop that prints each of the numbers on a new line.
+# Write a loop that prints each number and its square on a new line.
+# Write a loop that adds all the numbers from the list into a variable called total. You should set the total variable to have the value 0 before you start adding them up, and print the value in total after the loop has completed.
+# Print the product of all the numbers in the list. (product means all multiplied together)
+# --------------------------------------------------------
+
+
+# --------------------------------------------------------
+# Exercise 6 - This is the same exercise that took an input to draw a regular polygon
+#
+#
+# Use for loops to make a turtle draw these regular polygons (regular means all sides the same lengths, all angles the same):
+# An equilateral triangle
+# A square
+# A hexagon (six sides)
+# An octagon (eight sides)
+# --------------------------------------------------------
+
+
+# --------------------------------------------------------
+# Exercise 7
+# A drunk pirate makes a random turn and then takes 100 steps forward, makes another random turn, takes another 100 steps, turns another random amount, etc. A social science student records the angle of each turn before the next 100 steps are taken. Her experimental data is [160, -43, 270, -97,-43, 200, -940, 17, -86]. (Positive angles are counter-clockwise.) Use a turtle to draw the path taken by our drunk friend.
+# Enhance your program above to also tell us what the drunk pirate’s heading is after he has finished stumbling around. (Assume he begins at heading 0).
+# If you were going to draw a regular polygon with 18 sides, what angle would you need to turn the turtle at each corner?
+# --------------------------------------------------------
+
+
+# --------------------------------------------------------
+# Exercise 8
+
+#At the interactive prompt, anticipate what each of the following lines will do, and then record what happens. Score yourself, giving yourself one point for each one you anticipate correctly:
+
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess = turtle.Turtle()
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.right(90)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.left(3600)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.right(-90)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.speed(10)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.left(3600)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.speed(0)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.left(3645)
+# YOUR COMMENT OF THE LINE BELOW GOES HERE
+tess.forward(-100)
+# -------------------------------------------------------9 
+
+
+
+# --------------------------------------------------------
+# Exercise 9 
+# Look at the picture on the last slide of the Unit 3 Presentation  
+# Recreate that image...
+
+# Write a program to draw a face of a clock that looks something like this:
+# Create a turtle, and assign it to a variable. When you ask for its type, what do you get?
+# What is the collective noun for turtles? (Hint: they don’t come in herds.)
+# What the collective noun for pythons? Is a python a viper? Is a python venomous?
+# -------------------------------------------------------9 
+
+
+# --------------------------------------------------------
+# Exercise 9 
+# Draw a face
+# Enclosed in a black circle (radius 300)
+# with small green blots (i.e. filled circles) for eyes
+# a thick blue triangle for a nose
+# and a red smiling mouth. 
+# The simplest way of making the mouth is to draw a red blot, and then to
+# draw a white blot slightly higher, leaving a crescent of red 
+# (but if you do it this way, you may need to think carefully about the
+# order in which you draw the features). 
+# You will need to make use of the circle, blot, and thickness commands,
+# in addition to those mentioned earlier, and you can if you 
+# wish also use movexy and/or drawxy
+# --------------------------------------------------------
+
+""" 
+Good luck!
+"""
